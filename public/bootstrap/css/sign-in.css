@@ -1,0 +1,34 @@
+html,
+body {
+  height: 100%;
+}
+
+.form-signin {
+  max-width: 450px;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.login-submit {
+  background-color: #7ee912;
+}
+
+.login-submit:hover {
+  background-color: #66c910; /* 少し濃い緑に */
+  border-color: #66c910;
+  color: #000; /* 必要に応じて文字色維持 */
+}
