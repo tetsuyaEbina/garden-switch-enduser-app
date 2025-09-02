@@ -1,3 +1,91 @@
+<div id="top"></div>
+
+# ドキュメント
+
+## 目次
+
+1. [使用技術一覧](#使用技術一覧)
+2. [概要](#概要)
+3. [使用言語](#使用言語)
+4. [公開環境](#公開環境)
+5. [想定local環境](#想定local環境)
+6. [準備](#準備)
+
+## 使用技術一覧
+
+<!-- シールド一覧 -->
+<!-- 該当するプロジェクトの中から任意のものを選ぶ-->
+<p style="display: inline">
+  <!-- フロントエンドのフレームワーク一覧 -->
+  <img src="https://img.shields.io/badge/-Bootstrap-563D7C.svg?logo=bootstrap&style=for-the-badge">
+  <!-- バックエンドのフレームワーク一覧 -->
+  <img src="https://img.shields.io/badge/-Laravel-E74430.svg?logo=django&style=for-the-badge">
+  <!-- フロントエンドの言語一覧 -->
+  <img src="https://img.shields.io/badge/html5-E34F26?logo=html5&logoColor=fff&style=for-the-badge">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=for-the-badge">
+  <img src="https://img.shields.io/badge/CSS-639?logo=css&logoColor=fff&style=for-the-badge">
+  <!-- バックエンドの言語一覧 -->
+  <img src="https://img.shields.io/badge/-Php-777BB4.svg?logo=python&style=for-the-badge">
+  <!-- DB一覧 -->
+  <img src="https://img.shields.io/badge/-Mysql-4479A1.svg?logo=python&style=for-the-badge">
+  <!-- インフラ一覧 -->
+  <img src="https://img.shields.io/badge/-Amazon%20aws-232F3E.svg?logo=python&style=for-the-badge">
+
+</p>
+
+<!-- プロジェクトについて -->
+## 概要
+- 「garden-switch-enduser-app」は、(株)ガーデンがサービス展開している「Switch」のエンドユーザ向けアプリケーション
+- 本アプリケーションは、APIを経由してホールの稼働に関するデータをユーザに提供する
+- /admin, /userとユーザの導線は2種類存在する
+
+### 特徴
+- APIとの連携が必須(今後定期的に更新していく)
+
+<!-- 言語、フレームワークのバージョンを記載 -->
+## 使用言語
+| 言語・フレームワーク | バージョン |
+| ----------| ---------- |
+| php       | 8.4.7      |
+| Laravel   | 12.26.4    |
+| Bootstrap | 5.3.2      |
+| MySQL     | 8.0.31     |
+
+その他のパッケージのバージョンはcomposer.json を参照
+
+<!-- インフラの一覧 -->
+## 公開環境
+| 項目  | 内容 |
+| --------------------- | ---------- |
+| インフラ_アプリケーション  | AWS(EC2) |
+| インフラ_アプリケーション_OS | Ubuntu |
+| インフラ_データベース  | AWS(RDS)    |
+
+## 想定local環境
+| 項目  | 内容 |
+| --------------------- | ---------- |
+| 動作確認済みPC | MacBook Pro 16GB Apple M2 Max (メモリ:64GB)|
+| 動作確認済みOS | Sequoia 15.5 |
+
+<!-- 準備 -->
+## 準備
+- [timedatectlの設定]以下のコマンドを実行(timedatectlを実行して、LocalTime及びTimeZoneがJSTになっていればOK)
+```
+sudo timedatectl set-timezone Asia/Tokyo
+```
+- [DB初期設定]migrate実行
+```
+php artisan migrate
+```
+- [管理者(admin)初期設定]
+```
+php artisan command:create-admin
+```
+<br>
+<br>
+
+# 以下、Laravelのライセンス情報
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
