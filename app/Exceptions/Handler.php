@@ -34,7 +34,13 @@ class Handler extends ExceptionHandler
     public function render($request, $exception)
     {
         // サブディレクトリによってテンプレート分岐
-        $prefix = $request->is('user*') ? 'user.errors' : 'errors';
+        if ($request->is('user*')) {
+            $prefix = 'user.errors';
+        } elseif ($request->is('admin*')) {
+            $prefix = 'admin.errors';
+        } else {
+            $prefix = 'errors';
+        }
 
         // ModelNotFoundException を 404 に変換（メッセージは config から）
         if ($exception instanceof ModelNotFoundException) {
