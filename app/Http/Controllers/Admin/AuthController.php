@@ -40,10 +40,24 @@ class AuthController extends Controller
             // 他セッションを削除（多重ログイン防止）
             $admin            = Auth::guard('admin')->user();
             $currentSessionId = Session::getId();
-            DB::table('sessions')
-                ->where('user_id', $admin->id)
-                ->where('id', '!=', $currentSessionId)
-                ->delete();
+            $sessions         = DB::table('sessions')->where('user_id', $admin->id)->get();
+            foreach ($sessions as $session) {
+                try {
+                    $data = unserialize(base64_decode($session->payload));
+                    foreach ($data as $key => $value) {
+                        // login_admin_ というキー名を持つかを確認
+                        if (str_starts_with($key, 'login_admin_')) {
+                            if ($session->id !== $currentSessionId) {
+                                DB::table('sessions')->where('id', $session->id)->delete();
+                            }
+                            break;
+                        }
+                    }
+                } catch (\Throwable $e) {
+                    // エラーは無視
+                    continue;
+                }
+            }
             return redirect()->intended(route('admin.home'));
         }
 

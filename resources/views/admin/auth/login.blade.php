@@ -7,8 +7,9 @@
             <div class="card-header text-center fw-bold">管理者ログイン</div>
             <div class="card-body">
                 @if ($errors->any())
-                    <div class="alert alert-danger">
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     {{ $errors->first() }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="閉じる"></button>
                     </div>
                 @endif
                 @if(session('success'))
