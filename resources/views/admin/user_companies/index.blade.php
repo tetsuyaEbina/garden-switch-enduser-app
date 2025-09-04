@@ -34,6 +34,7 @@
             @endif
         </div>
     </div>
+    <hr>
 
     @if(session('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -62,7 +63,7 @@
     </form>
 
     <table class="table table-bordered">
-        <thead>
+        <thead class="table-dark">
             <tr class="text-center">
                 <th>ID</th>
                 <th>法人名</th>

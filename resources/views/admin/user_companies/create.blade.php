@@ -4,6 +4,7 @@
 @section('content')
 <div class="container">
     <h2 class="mb-4">法人一括登録&#40;最大5件&#41;</h2>
+    <hr>
 
     @if ($errors->any())
         <div class="alert alert-danger alert-dismissible fade show" role="alert">

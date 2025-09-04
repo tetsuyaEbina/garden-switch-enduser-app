@@ -7,6 +7,7 @@
         <h2>Switch管理者一覧</h2>
         <a href="{{ route('admin.admins.create') }}" class="btn btn-sm btn-primary">&plus;&nbsp;新規作成</a>
     </div>
+    <hr>
 
     @if(session('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -23,13 +24,13 @@
     @endif
 
     <table class="table table-bordered">
-        <thead>
+        <thead class="table-dark">
             <tr class="text-center">
                 <th></th>
                 <th>名前</th>
                 <th>メール</th>
                 <th>登録日</th>
-                <th>is_root</th>
+                <th>root権限</th>
                 <th>操作</th>
             </tr>
         </thead>

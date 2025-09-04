@@ -4,6 +4,7 @@
 @section('content')
 <div class="container">
     <h2 class="mb-4">Switch管理者編集</h2>
+    <hr>
 
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -25,7 +26,7 @@
             <label class="form-label">メールアドレス</label>
             <input type="email" name="email" class="form-control" required value="{{ old('email', $admin->email) }}">
         </div>
-        <button class="btn btn-sm btn-primary">更新</button>
+        <button class="btn btn-sm btn-success">更新</button>
         <a href="{{ route('admin.admins.index') }}" class="btn btn-sm btn-secondary">戻る</a>
     </form>
 </div>

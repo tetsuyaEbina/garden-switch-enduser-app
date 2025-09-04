@@ -10,7 +10,8 @@
                     <i class="bi bi-file-earmark-text me-1"></i> ログビューア
                 </h5>
                 <p class="card-text mb-0 small text-muted">
-                    アプリケーションログを確認できます。管理者のみアクセス可能です。
+                    アプリケーションログを確認できます。<br>
+                    管理者のみアクセス可能です。
                 </p>
             </div>
             <div>

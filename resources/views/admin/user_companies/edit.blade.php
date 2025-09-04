@@ -5,7 +5,6 @@
 <div class="container">    
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h2>法人編集</h2>
-        <a href="{{ route('admin.user_companies.index') }}" class="btn btn-secondary btn-sm">戻る</a>
     </div>
     <hr>
 
@@ -58,9 +57,8 @@
             <input type="text" name="address" class="form-control" value="{{ old('address', $company->address) }}" maxlength="512">
         </div>
 
-        <div class="text-end">
-            <button type="submit" class="btn btn-primary btn-sm">更新</button>
-        </div>
+        <button type="submit" class="btn btn-success btn-sm">更新</button>
+        <a href="{{ route('admin.user_companies.index') }}" class="btn btn-sm btn-secondary">戻る</a>
     </form>
 </div>
 @endsection

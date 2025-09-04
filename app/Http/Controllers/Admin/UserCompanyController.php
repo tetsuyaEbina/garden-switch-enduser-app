@@ -71,6 +71,7 @@ class UserCompanyController extends Controller
     {
         $data = $request->input('companies', []);
         if (count($data) > 5){
+            // TODO:数値はconfigに移動させる
             return redirect()->route('admin.user_companies.create')->with('error', '登録可能最大件数は5件です。');
         }
 
@@ -179,7 +180,7 @@ class UserCompanyController extends Controller
             $company->update($request->all());
         });
 
-        return redirect()->route('admin.user_companies.index')->with('success', '法人情報を更新しました。');
+        return redirect()->route('admin.user_companies.index')->with('success', "法人（{$company->user_company_name}）の情報を更新しました。");
     }
 
     /**

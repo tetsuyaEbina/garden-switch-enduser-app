@@ -4,6 +4,7 @@
 @section('content')
 <div class="container">
     <h2 class="mb-4">パスワード変更</h2>
+    <hr>
 
     @if ($errors->any())
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
