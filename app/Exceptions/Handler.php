@@ -34,7 +34,10 @@ class Handler extends ExceptionHandler
     public function render($request, $exception)
     {
         // サブディレクトリによってテンプレート分岐
-        if ($request->is('user*')) {
+        // log-viewerに未認証の状態でアクセスされた場合は、強制リダイレクト
+        if ($request->is('log-viewer*')) {
+            return redirect('/');
+        } elseif ($request->is('user*')) {
             $prefix = 'user.errors';
         } elseif ($request->is('admin*')) {
             $prefix = 'admin.errors';
