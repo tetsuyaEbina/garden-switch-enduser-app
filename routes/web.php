@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminUserController;
+use App\Http\Controllers\Admin\UserCompanyController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
 
@@ -29,5 +30,14 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::post('admins/reset_password/{id}', [AdminUserController::class, 'resetPassword'])->name('admins.reset_password');
         Route::get('/profile/password', [AdminUserController::class, 'editPassword'])->name('admins.password.edit');
         Route::post('/profile/password', [AdminUserController::class, 'updatePassword'])->name('admins.password.update');
+
+        //user_companies関連
+        Route::get('user_companies/index', [UserCompanyController::class, 'index'])->name('user_companies.index');
+        Route::get('user_companies/create', [UserCompanyController::class, 'create'])->name('user_companies.create');
+        Route::post('user_companies/store', [UserCompanyController::class, 'store'])->name('user_companies.store');
+        Route::get('user_companies/edit/{id}', [UserCompanyController::class, 'edit'])->name('user_companies.edit');
+        Route::put('user_companies/update/{id}', [UserCompanyController::class, 'update'])->name('user_companies.update');
+        Route::post('user_companies/delete/{id}', [UserCompanyController::class, 'delete'])->name('user_companies.delete');
+        Route::put('user_companies/restore/{id}', [UserCompanyController::class, 'restore'])->name('user_companies.restore');
     });
 });

@@ -21,6 +21,14 @@
                         <li><a class="dropdown-item" href="{{ route('admin.admins.index') }}">Switch管理者一覧</a></li>
                     </ul>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        エンドユーザ関連
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{ route('admin.user_companies.index') }}">ユーザ所属法人設定</a></li>
+                    </ul>
+                </li>
             </ul>
             @endauth
 
