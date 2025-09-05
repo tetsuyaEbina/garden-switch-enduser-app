@@ -125,3 +125,23 @@ body { padding-top: var(--switch-navbar-height); }
   display: inline-flex; align-items: center; justify-content: center;
 }
 .btn-settings:hover{ background: rgba(255,255,255,0.35); }
+
+/* 検索フォームの背景色をより明るいグレーに */
+#searchPanelWrap {
+  background-color: #e9ecef !important; /* Bootstrap bg-light より少し明るめ */
+}
+
+/* ページタイトル共通 */
+.page-title {
+  font-size: 1.25rem;     /* h4相当。必要なら調整 */
+  font-weight: 700;
+  color: #0f2b27;         /* 濃いめの文字色 */
+  margin-bottom: .25rem;  /* hrとの間隔を最小限に */
+}
+
+/* タイトル下の区切り線 */
+.page-divider {
+  border: 0;
+  border-top: 2px solid var(--switch-secondary); /* 例: #0097A4 */
+  margin: 0 0 1rem 0;    /* 上詰め、下だけ余白 */
+}
