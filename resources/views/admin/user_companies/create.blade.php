@@ -55,7 +55,7 @@
             </div>
         </div>
 
-        <button type="button" class="btn btn-sm btn-outline-secondary mb-3" id="addRowBtn">＋追加</button>
+        <button type="button" class="btn btn-sm btn-outline-secondary mb-3" id="addRowBtn">&plus;&nbsp;追加</button>
 
         <div>
             <button class="btn btn-sm btn-success">登録</button>
