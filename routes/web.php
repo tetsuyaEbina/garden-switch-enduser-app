@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\UserCompanyController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\UserController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -39,5 +40,15 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::put('user_companies/update/{id}', [UserCompanyController::class, 'update'])->name('user_companies.update');
         Route::post('user_companies/delete/{id}', [UserCompanyController::class, 'delete'])->name('user_companies.delete');
         Route::put('user_companies/restore/{id}', [UserCompanyController::class, 'restore'])->name('user_companies.restore');
+
+        //users関連
+        Route::get('users', [UserController::class, 'index'])->name('users.index');
+        Route::get('users/create', [UserController::class, 'create'])->name('users.create');
+        Route::post('users', [UserController::class, 'store'])->name('users.store');
+        Route::get('users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
+        Route::put('users/{id}', [UserController::class, 'update'])->name('users.update');
+        Route::delete('users/{id}', [UserController::class, 'delete'])->name('users.delete');
+        Route::put('users/{id}/restore', [UserController::class, 'restore'])->name('users.restore');
+        Route::post('/users/{id}/reset_password', [UserController::class, 'resetPassword'])->name('users.reset_password');
     });
 });

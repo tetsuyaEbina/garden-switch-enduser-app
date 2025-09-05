@@ -14,4 +14,5 @@ return [
 
     'default'        => 20,
     'user_companies' => 40,
+    'users'          => 40,
 ];

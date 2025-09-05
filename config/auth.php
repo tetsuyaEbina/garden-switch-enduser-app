@@ -44,7 +44,10 @@ return [
             'driver' => 'session',
             'provider' => 'admins',
         ],
-        // TODO:後で、userも追加
+        'user' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
     ],
 
     /*
@@ -74,10 +77,10 @@ return [
             'model' => App\Models\Admin::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'users' => [
+            'driver' => 'eloquent',
+            'table' => App\Models\User::class,
+        ],
     ],
 
     /*

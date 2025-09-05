@@ -27,6 +27,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="{{ route('admin.user_companies.index') }}">ユーザ所属法人設定</a></li>
+                        <li><a class="dropdown-item" href="{{ route('admin.users.index') }}">ユーザ設定</a></li>
                     </ul>
                 </li>
             </ul>

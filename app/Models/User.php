@@ -22,7 +22,16 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'user_company_id'
+        'user_company_id',
+        'viewable_hall_id_list',
+        'department_name',
+        'position_name',
+        'personal_invoice_number',
+        'personal_address',
+        'original_p_ball_unit_price_list',
+        'original_s_coin_unit_price_list',
+        'original_machine_type_list',
+        'has_custom_flow',
     ];
 
     /**
