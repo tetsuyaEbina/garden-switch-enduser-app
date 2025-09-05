@@ -1,0 +1,26 @@
+/* ログイン見出し */
+.login-heading {
+  background: #57cfb0;
+  color: #fff;               /* 白文字推奨 */
+  padding: 1rem;             /* 縦横余白をしっかり */
+  text-align: center;
+  font-size: 1.5rem;         /* Bootstrap h5 より大きく */
+  font-weight: 700;
+  border-radius: 0.375rem;   /* Bootstrap rounded-2 相当 */
+  margin-bottom: 1rem;
+}
+
+/* ログイン専用ボタン */
+.btn-switch {
+  background-color: #0DA5E5;
+  border-color: #0DA5E5;
+  color: #fff;
+  font-weight: 700; /* 太字 */
+}
+
+.btn-switch:hover,
+.btn-switch:focus {
+  background-color: #0b94cc; /* 少し濃いブルー */
+  border-color: #0b94cc;
+  color: #fff;
+}

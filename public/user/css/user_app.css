@@ -1,0 +1,127 @@
+:root{
+  --switch-primary: #57cfb0;
+  --switch-secondary: #0097A4;
+  --switch-navbar-height: 96px;
+}
+
+/* 固定ナビ分の上余白（幅変化でも不変） */
+body { padding-top: var(--switch-navbar-height); }
+
+/* --- Navbar --- */
+.switch-navbar{
+  position: fixed; top: 0; left: 0; right: 0;
+  height: var(--switch-navbar-height);
+  z-index: 1030;
+}
+.switch-navbar-inner{ display:flex; flex-direction:column; height:100%; }
+
+.switch-navbar-top{
+  flex:0 0 60%; background:var(--switch-primary);
+  display:flex; align-items:center;
+}
+.switch-navbar-bottom{
+  flex:0 0 40%; background:var(--switch-secondary);
+  display:flex; align-items:center;
+}
+
+/* ブランド（container 基準に揃える） */
+.switch-brand{
+  font-weight: 700;
+  margin-left: 0 !important; /* 念のため強制 */
+  font-size: 1.7rem;
+  color: #0f2b27;
+  text-decoration: none;
+}
+
+/* 下段メニュー基礎 */
+.switch-navbar-bottom .nav{ justify-content:center; }
+.switch-navbar-bottom .nav .nav-link{ color:#fff; }
+.switch-navbar-bottom .nav .nav-link:hover,
+.switch-navbar-bottom .nav .nav-link.active{ text-decoration:underline; color:#fff; }
+
+/* main の上余白は px/rem で安定（%は使わない） */
+.app-main{ margin-top: 16px; } /* 好みで 24px 等に調整 */
+
+/* 連続文字でも必ず折り返す */
+.wrap-balance{
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+/* ===== 下段メニューのハンバーガー & ピルUI ===== */
+
+/* モバイルのトグル（ハンバーガー） */
+.btn-menu-toggle{
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.45);
+  color: #fff;
+  border-radius: 9999px;
+  padding: .25rem .75rem;
+}
+.btn-menu-toggle:hover,
+.btn-menu-toggle:focus{
+  background: rgba(255,255,255,0.3);
+  color: #fff;
+}
+
+/* 共通ピル */
+.nav-pill{
+  border: 1px solid rgba(255,255,255,0.45);
+  border-radius: 9999px;
+  padding: .25rem .75rem;
+  line-height: 1.2;
+}
+
+/* ピル（リンク） */
+.switch-navbar-bottom .nav .nav-link.nav-pill{
+  color: #fff;
+}
+.switch-navbar-bottom .nav .nav-link.nav-pill:hover,
+.switch-navbar-bottom .nav .nav-link.nav-pill:focus{
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ピル（ボタン：ログアウト） */
+.btn-logout{
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255,255,255,0.45);
+}
+.btn-logout:hover,
+.btn-logout:focus{
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+  border-color: rgba(255,255,255,0.6);
+}
+
+/* collapse が開いた時の間（モバイル） */
+#switchBottomMenu.collapse.show{ margin-top: .5rem; }
+
+/* md以上：一行固定＋必要なら横スクロール可 */
+@media (min-width: 768px){
+  .nav-line{
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    padding-bottom: .25rem;
+  }
+  .nav-line::-webkit-scrollbar{ height: 6px; }
+  .nav-line::-webkit-scrollbar-thumb{
+    background: rgba(255,255,255,0.3);
+    border-radius: 3px;
+  }
+}
+
+/* 上段右：設定ギア */
+.btn-settings{
+  background: rgba(255,255,255,0.25);
+  border: 1px solid rgba(0,0,0,0.1);
+  color: #0f2b27;
+  border-radius: 9999px;
+  width: 36px; height: 36px;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.btn-settings:hover{ background: rgba(255,255,255,0.35); }

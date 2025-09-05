@@ -76,11 +76,6 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\Admin::class,
         ],
-
-        'users' => [
-            'driver' => 'eloquent',
-            'table' => App\Models\User::class,
-        ],
     ],
 
     /*

@@ -7,6 +7,9 @@ use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\UserController;
 
+use App\Http\Controllers\User\AuthController AS UserAuthController;
+use App\Http\Controllers\User\DashboardController AS UserDashboardController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -50,5 +53,21 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::delete('users/{id}', [UserController::class, 'delete'])->name('users.delete');
         Route::put('users/{id}/restore', [UserController::class, 'restore'])->name('users.restore');
         Route::post('/users/{id}/reset_password', [UserController::class, 'resetPassword'])->name('users.reset_password');
+    });
+});
+
+Route::prefix('user')->name('user.')->group(function () {
+    // ログイン,ログアウト処理
+    Route::get('login', [UserAuthController::class, 'showLoginForm'])->name('login');
+    Route::post('login', [UserAuthController::class, 'login']);
+    Route::post('logout', [UserAuthController::class, 'logout'])->name('logout');
+
+    // ログイン後の管理画面(auth:user ミドルウェア保護)
+    Route::middleware(['auth:user'])->group(function () {
+        Route::get('home', [UserDashboardController::class, 'index'])->name('home');
+
+        // パスワード再設定
+        Route::get('reset_password', [UserAuthController::class, 'showResetPasswordForm'])->name('reset_password.form');
+        Route::post('reset_password', [UserAuthController::class, 'resetPassword'])->name('reset_password');
     });
 });
